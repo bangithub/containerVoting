@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+   <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <meta charset="UTF-8">
+        <title>Vote Model Result</title>
+
+    <style>
+           #view-source {
+               position: fixed;
+               display: block;
+               right: 0;
+               bottom: 0;
+               margin-right: 40px;
+               margin-bottom: 40px;
+               z-index: 900;
+           }
+       </style>
+    </head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h1>My favorite pet</h1>
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            </div>
+        </header>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--10-col"> I've got a new pet for today, it's a <strong th:text="${choix}"></strong> and i'm very happy
+                <!-- Colored icon button -->
+                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                    <i class="material-icons">mood</i>
+                </button>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col"> reference number: <strong th:text="${cookie}"></strong></p></div>
+        </div>
+    <a href="http://localhost:8080/vote" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Choose another pet</a>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </div>
+</body>
+</html>

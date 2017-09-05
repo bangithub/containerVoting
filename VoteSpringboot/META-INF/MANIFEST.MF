@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Application-Name: Vote Module
+Main-Class: com.vote.vote.VoteSpringbootApplication
+Created-By: Patty
+

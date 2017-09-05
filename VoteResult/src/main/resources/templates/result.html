@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+
+    <meta charset="UTF-8"/>
+
+    <!-- Square card -->
+    <style>
+        .demo-card-square.mdl-card {
+            width: 320px;
+            height: 320px;
+        }
+        .demo-card-square > .mdl-card__title {
+            color: #fff;
+            background:
+                    url('/static/cat.jpg') bottom right 15% no-repeat #6e66b6;
+        }
+    </style>
+
+    <title>Vote Model Result</title>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h1>Result</h1>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+    </header>
+
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+                <div class="col s6">
+                    <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text"><strong th:text=" ${result}"></strong></h2>
+                        </div>
+                        <div class="mdl-card__supporting-text mdl-card--expand">
+                            A small domesticated carnivorous mammal with soft fur, a short snout, and retractable claws. <br/>
+                            It is widely kept as a pet or for catching mice, and many breeds have been developed.
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

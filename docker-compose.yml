@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  vote:
+    build: VoteSpringboot/
+    container_name: vote
+    volumes:
+     - ./VoteSpringboot/src/vote:/app
+     - ./VoteSpringboot/target:/app
+    ports:
+      - "8080:8080"
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  db:
+    image: postgres:9.4
+    container_name: postgres
+    volumes:
+      - "./VoteResult/db-data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+  result:
+    build: VoteResult/
+    container_name: result
+    volumes:
+      - ./result:/app
+    ports:
+      - "5001:80"
+      - "5858:5858"
+    networks:
+      - front-tier
+      - back-tier
+
+  worker:
+    build: VoteWorker/
+    container_name: worker
+    networks:
+      - back-tier
+
+volumes:
+  VoteResult/db-data:
+
+networks:
+  front-tier:
+  back-tier:
